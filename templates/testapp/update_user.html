@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>update_user</title>
+</head>
+<body>
+
+    <table >
+        <tr>
+            <th>id</th>
+            <th>username</th>
+            <th>password</th>
+        </tr>
+        {% for user in user_data %}
+            <tr>
+                <form method="post" action="/update/user/">
+                <td><input type="text" name="id" value="{{ user.id }} " readonly="readonly"></td>
+                <td><input type="text" name="username" value="{{ user.username }}"></td>
+                <td><input type="text" name="password" value="{{ user.password }}"></td>
+                <td><input type="submit" value="提交"></td>
+                </form>
+            </tr>
+        {% endfor %}
+
+    </table>
+
+</body>
+</html>

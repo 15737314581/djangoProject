@@ -15,9 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from testapp.views import index
-from testapp.views import hello_word
-from testapp.views import test_create, test_delete
+from testapp.views import *
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -26,7 +24,12 @@ urlpatterns = [
 urlpatterns += [
     path('index/', index),
     path('hello/', hello_word),
-    path('create/', test_create),
-    path('delete/', test_delete)
+    path('create1/', test_create),
+    path('delete/', test_delete),
+    path('create/', get_create_user_html),
+    path('create/user/', create_user),
+    path('search/', get_search_user_html),
+    path('search/user/', search_user),
+    path('update/', get_update_user_html),
+    path('update/user/', update_user)
 ]
-
