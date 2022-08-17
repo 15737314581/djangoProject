@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>create_case</title>
+</head>
+
+<body>
+    <form method="post" action="/at_create/case">
+        用例名称：<input type="text" name="case_name">
+        浏览器：<select name="browser">
+                    <option value="chrome" label="谷歌浏览器"></option>
+                    <option value="firefox" label="火狐浏览器"></option>
+                    <option value="ie" label="IE浏览器"></option>
+               </select>
+        网址：<input type="text" name="url">
+        <input type="submit" value="提交">
+
+    </form>
+    <table border="1" cellspacing="0">
+        <tr>
+            <th>case_name</th>
+            <th>browser</th>
+            <th>url</th>
+        </tr>
+        {% for case in case_data %}
+            <tr>
+                <td>{{ case.case_name }}</td>
+                <td>{{ case.browser }}</td>
+                <td>{{ case.url }}</td>
+            </tr>
+        {% endfor %}
+
+    </table>
+
+</body>
+</html>

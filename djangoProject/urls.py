@@ -15,6 +15,8 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+
+from autoTestWeb.views import *
 from testapp.views import *
 
 urlpatterns = [
@@ -31,5 +33,7 @@ urlpatterns += [
     path('search/', get_search_user_html),
     path('search/user/', search_user),
     path('update/', get_update_user_html),
-    path('update/user/', update_user)
+    path('update/user/', update_user),
+    path('at_create/', get_create_case_html),
+    path('at_create/case', create_case)
 ]

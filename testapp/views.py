@@ -1,5 +1,6 @@
-from django.shortcuts import render
 from django.http import HttpResponse
+from django.shortcuts import render
+
 from testapp.models import *
 
 
@@ -111,3 +112,4 @@ def update_user(request):
                 "password": user_obj.__dict__['password']}
         user_data.append(data)
     return render(request, 'testapp/update_user.html', context={"user_data": user_data})
+
