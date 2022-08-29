@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>create_set</title>
+</head>
+<body>
+    <form method="post" action="/set/create/">
+        测试用例：<select name="testCase">
+                    {% for case_name in case_name_data %}
+                        <option value="{{ case_name }}" label="{{ case_name }}"></option>
+                    {% endfor %}
+                </select><br>
+        测试步骤：<input type="text" name="sort"><br>
+        定位方式：<select name="search_type">
+                    <option value="id" label="ID"></option>
+                    <option value="xpath" label="XPATH"></option>
+                    <option value="link text" label="LINK_TEXT"></option>
+                    <option value="partial link text" label="PARTIAL_LINK_TEXT"></option>
+                    <option value="name" label="NAME"></option>
+                    <option value="tag name" label="TAG_NAME"></option>
+                    <option value="class name" label="CLASS_NAME"></option>
+                    <option value="css selector" label="CSS_SELECTOR"></option>
+                </select><br>
+        定位值：<input type="text" name="search_value"><br>
+        操作方式：<select name="action">
+                    <option value="click" label="点击"></option>
+                    <option value="send_keys" label="输入文字"></option>
+                    <option value="clear" label="清楚文本"></option>
+                </select><br>
+        输入内容：<input type="text" name="send_keys_value">
+        <input type="submit" value="提交">
+    </form>
+    <table border="1" cellspacing="0">
+        <tr>
+            <th>id</th>
+            <th>testCase</th>
+            <th>sort</th>
+            <th>search_type</th>
+            <th>search_type</th>
+            <th>action</th>
+            <th>send_keys_value</th>
+        </tr>
+        {% for case_set in case_set_data %}
+            <tr>
+                <td>{{ case_set.id }}</td>
+                <td>{{ case_set.testCase }}</td>
+                <td>{{ case_set.sort }}</td>
+                <td>{{ case_set.search_type }}</td>
+                <td>{{ case_set.search_value }}</td>
+                <td>{{ case_set.action }}</td>
+                <td>{{ case_set.send_keys_value }}</td>
+            </tr>
+        {% endfor %}
+
+    </table>
+</body>
+</html>

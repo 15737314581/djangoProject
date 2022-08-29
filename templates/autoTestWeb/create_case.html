@@ -6,7 +6,7 @@
 </head>
 
 <body>
-    <form method="post" action="/at_create/case">
+    <form method="post" action="/case/create/">
         用例名称：<input type="text" name="case_name">
         浏览器：<select name="browser">
                     <option value="chrome" label="谷歌浏览器"></option>
@@ -30,8 +30,11 @@
                 <td>{{ case.url }}</td>
             </tr>
         {% endfor %}
-
     </table>
+    <form method="post" action="/run/">
+        运行用例的id: <input type="text" name="case_id">
+        <input type="submit" value="运行">
+    </form>
 
 </body>
 </html>

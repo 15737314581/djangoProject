@@ -34,6 +34,9 @@ urlpatterns += [
     path('search/user/', search_user),
     path('update/', get_update_user_html),
     path('update/user/', update_user),
-    path('at_create/', get_create_case_html),
-    path('at_create/case', create_case)
+    path('case/', get_create_case_html),
+    path('case/create/', create_case),
+    path('set/',get_create_set_html),
+    path('set/create/',create_set),
+    path('run/',run)
 ]
